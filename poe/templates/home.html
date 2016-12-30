@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Poe</title>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,900|Source+Code+Pro:700" rel="stylesheet">`
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/normalize.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  </head>
+  <body>
+
+    <section class="wrapper">
+      <input type="text" name="author" class="author editable" placeholder="Add your name">
+      <textarea name="title" placeholder="Title" class="title editable"></textarea>
+      <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In illo enim quae suscipit, placeat quod eaque ipsa corporis perspiciatis veritatis provident obcaecati animi sequi, dolor facere porro. Quaerat, vel, deleniti.</p>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/vendor/vue.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <!-- TODO: Use Pen for the editor -->
+    <!-- https://github.com/sofish/pen -->
+  </body>
+</html>

@@ -8,6 +8,7 @@ class Config(object):
     SECRET_KEY = os.environ.get('POE_SECRET_KEY', 'dummy-secret-key')
     APP_DIR = os.path.abspath(os.path.dirname(__file__))
     PROJECT_ROOT = os.path.abspath(os.path.join(APP_DIR, os.pardir))
+    STATIC_FOLDER = os.path.join(APP_DIR, 'static')
 
 
 class ProdConfig(Config):

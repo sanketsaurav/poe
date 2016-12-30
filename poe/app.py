@@ -3,7 +3,7 @@
 from flask import Flask
 
 from settings import ProdConfig
-from views import Ping
+from views import Ping, Home
 
 
 def create_app(config_object=ProdConfig):
@@ -20,6 +20,7 @@ poe_app = create_app()
 
 # register URLs
 poe_app.add_url_rule('/ping', view_func=Ping.as_view('ping'))
+poe_app.add_url_rule('/', view_func=Home.as_view('home'))
 
 if __name__ == '__main__':
-    poe_app.run()
+    poe_app.run(debug=True)
