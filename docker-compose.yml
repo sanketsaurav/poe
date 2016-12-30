@@ -1,0 +1,7 @@
+mongo:
+  image: mongo:latest
+  hostname: mongo
+  ports:
+    - "27018:27017"
+  volumes:
+    - /data/mongo-poe:/var/lib/mongodb
