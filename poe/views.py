@@ -1,15 +1,17 @@
 # -*- coding: utf-8 -*-
 """View functions for Poe."""
 from flask.views import MethodView
-from flask import render_template
+from flask import render_template, request
+
+from models import Post
 
 
-class Ping(MethodView):
+class PingView(MethodView):
     def get(self):
         return "PONG"
 
 
-class Home(MethodView):
+class HomeView(MethodView):
     """
     View for rendering the home page of the app.
     On GET: Render the home page.
@@ -19,9 +21,16 @@ class Home(MethodView):
         return render_template('home.html')
 
     def post(self):
-        pass
+        data = request.get_json()
+        new_post = Post(**data)
+        new_post.save()
+        return new_post.slug
 
 
-class Post(MethodView):
-    def get(self):
-        pass
+class PostView(MethodView):
+    def get(self, path):
+        try:
+            post = Post.objects.get(slug=path)
+            return render_template('post.html', post=post)
+        except:
+            return render_template('404.html'), 404
