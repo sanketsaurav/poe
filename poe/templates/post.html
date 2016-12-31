@@ -2,7 +2,17 @@
 
 {% block main %}
 <section class="wrapper">
-  <div class="author">{{ post.author }}</div>
+  <div class="author">
+    {% if post.author %}
+    <span>{{ post.author }}</span>
+    {% endif %}
+    <span class="date">
+      {% if post.author %}
+      <span>on</span>
+      {% endif %}
+      <span>{{ post.modified|format_date }}</span>
+    </span>
+  </div>
   <div class="title">{{ post.title }}</div>
   <p class="content">{{ post.content }}</p>
 </section>

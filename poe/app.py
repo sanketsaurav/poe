@@ -4,7 +4,7 @@ from flask import Flask
 from mongoengine import connect
 
 from settings import ProdConfig
-from views import PingView, HomeView, PostView
+from views import HomeView, PostView, RandomView
 
 
 def create_app(config_object=ProdConfig):
@@ -31,9 +31,16 @@ def create_app(config_object=ProdConfig):
 poe_app = create_app()
 
 # register URLs
-poe_app.add_url_rule('/ping', view_func=PingView.as_view('ping'))
 poe_app.add_url_rule('/', view_func=HomeView.as_view('home'))
+poe_app.add_url_rule('/random', view_func=RandomView.as_view('random'))
 poe_app.add_url_rule('/<path>', view_func=PostView.as_view('post'))
+
+
+# add a template filter
+@poe_app.template_filter()
+def format_date(date):
+    return date.strftime("%b %d, %Y")
+
 
 if __name__ == '__main__':
     poe_app.run(debug=True)

@@ -2,18 +2,18 @@
 <html>
   <head>
     <title>Poe</title>
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,900|Source+Code+Pro:500,700" rel="stylesheet">`
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,900|Source+Code+Pro:500,700|Roboto:500,700" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/vendor/normalize.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/5.22.1/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/5.22.1/css/themes/beagle.min.css" type="text/css" media="screen" charset="utf-8">
   </head>
   <body>
 
     {% block main %}
     {% endblock main %}
 
-    <script src="{{ url_for('static', filename='js/vendor/vue.min.js') }}"></script>
+    <script src="//cdn.jsdelivr.net/medium-editor/5.22.1/js/medium-editor.min.js"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-    <!-- TODO: Use Pen for the editor -->
-    <!-- https://github.com/sofish/pen -->
   </body>
 </html>

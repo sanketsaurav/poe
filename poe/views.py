@@ -6,11 +6,6 @@ from flask import render_template, request
 from models import Post
 
 
-class PingView(MethodView):
-    def get(self):
-        return "PONG"
-
-
 class HomeView(MethodView):
     """
     View for rendering the home page of the app.
@@ -34,3 +29,11 @@ class PostView(MethodView):
             return render_template('post.html', post=post)
         except:
             return render_template('404.html'), 404
+
+    def post(self, path):
+        pass
+
+
+class RandomView(MethodView):
+    def get(self):
+        pass
