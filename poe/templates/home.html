@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 
 {% block main %}
+<div id="error-notice">
+  Looks like an error has occured.
+</div>
+<nav>
+  <a id="publish" class="button">Publish</a>
+</nav>
 <section class="wrapper">
-  <input type="text" name="author" class="author editable" placeholder="Add your name">
+  <input type="text" id="author" class="author editable" placeholder="Add your name">
   <div class="title editable" id="title"></div>
   <div class="content editable" id="content"></div>
 </section>

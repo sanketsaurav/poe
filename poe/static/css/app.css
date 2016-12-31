@@ -55,9 +55,37 @@ html, body {
 .content {
   font-family: 'Merriweather', serif;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 2;
+  color: #404247;
+}
+
+.content p + * {
+  margin-top: 10px;
+}
+
+.content h2 {
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  color: #333;
+  font-weight: 700;
+  margin: 6px 0;
+  letter-spacing: -0.03rem;
+}
+
+.content h3 {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #a5a7ae;
+  margin: 6px 0;
+  letter-spacing: -0.03rem;
+}
+
+.content blockquote {
+  font-style: italic;
+  padding-left: 18px;
+  border-left: solid 6px;
+  margin-left: 0;
 }
 
 p {
@@ -93,4 +121,51 @@ p {
 
 .title.medium-editor-placeholder:after {
   font-style: normal !important;
+}
+
+nav {
+  text-align: right;
+  margin-top: 24px;
+  padding: 0 16px;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+nav > ul {
+  list-style-type: none;
+  font-size: 0.7rem;
+}
+
+nav > ul > li {
+  display: inline-block;
+}
+
+nav > ul > li + li {
+  margin-left: 16px;
+}
+
+.button {
+  border: solid 1px #eee;
+  padding: 10px 32px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #f6f6f6;
+}
+
+#error-notice {
+  background: #000;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #ddd;
+  padding: 16px 0;
+  margin-top: -50px;
+  transition: margin 0.3s ease-out;
 }

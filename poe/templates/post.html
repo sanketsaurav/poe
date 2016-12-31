@@ -1,6 +1,19 @@
 {% extends 'base.html' %}
 
 {% block main %}
+<nav>
+  <ul>
+    <li>
+      <a href="">Share</a>
+    </li>
+    <li>
+      <a href="">Options</a>
+    </li>
+    <li>
+      <a href="/">New Post</a>
+    </li>
+  </ul>
+</nav>
 <section class="wrapper">
   <div class="author">
     {% if post.author %}
@@ -13,7 +26,7 @@
       <span>{{ post.modified|format_date }}</span>
     </span>
   </div>
-  <div class="title">{{ post.title }}</div>
-  <p class="content">{{ post.content }}</p>
+  <div class="title">{{ post.title|safe }}</div>
+  <div class="content">{{ post.content|safe }}</div>
 </section>
 {% endblock main %}

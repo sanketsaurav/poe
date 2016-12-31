@@ -2,7 +2,7 @@ import datetime
 import uuid
 from mongoengine import Document, StringField, DateTimeField, signals
 
-from utils import slugify
+from utils import slugify, strip_tags
 
 
 class Post(Document):
@@ -18,7 +18,7 @@ class Post(Document):
 
     @classmethod
     def pre_save(cls, sender, document, **kwargs):
-        document.slug = slugify(document.title)
+        document.slug = slugify(strip_tags(document.title))
 
         # exit if this is an update, not creation
         if document.pk:

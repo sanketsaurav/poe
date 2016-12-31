@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """View functions for Poe."""
 from flask.views import MethodView
-from flask import render_template, request
+from flask import render_template, request, jsonify
 
 from models import Post
 
@@ -17,12 +17,20 @@ class HomeView(MethodView):
 
     def post(self):
         data = request.get_json()
+        print(data)
         new_post = Post(**data)
         new_post.save()
-        return new_post.slug
+        return jsonify({
+            'slug': new_post.slug
+        })
 
 
 class PostView(MethodView):
+    """
+    View for posts.
+    On GET: Render detail view for a post.
+    On POST: Update the details of a post.
+    """
     def get(self, path):
         try:
             post = Post.objects.get(slug=path)
