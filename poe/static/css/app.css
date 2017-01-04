@@ -68,7 +68,7 @@ html, body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   font-weight: 700;
-  margin: 6px 0;
+  margin: 10px 0 6px;
   letter-spacing: -0.03rem;
 }
 
@@ -77,7 +77,7 @@ html, body {
   line-height: 1.6;
   font-weight: 500;
   color: #a5a7ae;
-  margin: 6px 0;
+  margin: 10px 0 6px;
   letter-spacing: -0.03rem;
 }
 
